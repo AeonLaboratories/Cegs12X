@@ -134,9 +134,6 @@ namespace AeonHacs.Components
             IM_CT = Find<Section>("IM_CT");
             CT_VTT = Find<Section>("CT_VTT");
             MC_GM = Find<Section>("MC_GM");
-
-            VTT.Clean = () => Clean(VTT);
-
         }
         #endregion HacsComponent
 
@@ -243,13 +240,12 @@ namespace AeonHacs.Components
             ProcessDictionary["Flush Inlet Port"] = FlushIP;
             ProcessDictionary["Admit O2 into Inlet Port"] = AdmitIPO2;
             ProcessDictionary["Heat Quartz and Open Line"] = HeatQuartzOpenLine;
-            ProcessDictionary["Turn off IP furnace"] = TurnOffIPFurnace;
+            ProcessDictionary["Turn off IP furnaces"] = TurnOffIPFurnaces;
             ProcessDictionary["Discard IP gases"] = DiscardIPGases;
             ProcessDictionary["Close IP"] = CloseIP;
             ProcessDictionary["Bleed IP gas through frozen CT"] = FrozenBleed;
             ProcessDictionary["Bleed IP gas through CT (no temperature control)"] = Bleed;
             ProcessDictionary["Evacuate and Freeze VTT"] = FreezeVtt;
-            ProcessDictionary["Clean VTT"] = CleanVtt;
             ProcessDictionary["Admit Dead CO2 into MC"] = AdmitDeadCO2;
             ProcessDictionary["Purify CO2 in MC"] = CleanupCO2InMC;            
             ProcessDictionary["Discard MC gases"] = DiscardMCGases;
@@ -280,8 +276,6 @@ namespace AeonHacs.Components
             base.BuildProcessDictionary();
         }
 
-        protected virtual void CleanVtt() => VTT.Clean();
-
         protected override void OpenLine()
         {
             ProcessStep.Start("Open line");
@@ -303,9 +297,6 @@ namespace AeonHacs.Components
             ProcessSubStep.End();
 
             VacuumSystem1.Evacuate(OkPressure);
-
-            Clean(VTT);
-            Clean(CT);
 
             var gmWasOpened = GM.IsOpened && PreparedGRsAreOpened();
             var mcWasOpened = MC_Split.IsOpened && MC.Ports.All(p => p.IsOpened);
