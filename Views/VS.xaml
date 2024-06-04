@@ -30,58 +30,17 @@
             </Canvas>
 
             <!--Gas supplies-->
-            <wpf:GasSupply Canvas.Left="225" Canvas.Top="104" GasName="CO2" HelpText="Carbon dioxide gas supply"
-                    Valve="vCO2_VM" FlowValve="vCO2Flow" d:FlowValve=""/>
             <Canvas Canvas.Left="225" Canvas.Top="104" Width="99" Height="95">
-
-                <StackPanel Canvas.Left="26" Width="21" Background="Transparent"
-                    AutomationProperties.HelpText="Hydrogen gas supply">
-                    <wpf:Valve HorizontalAlignment="Center"
-                        Component="vH2_VM" HelpText="H2-VM valve"/>
-                    <Path HorizontalAlignment="Center" Margin="-1" Style="{DynamicResource FittingShapeStyle}" IsHitTestVisible="False"
-                        Data="M0.5,0.5 h8 v8 h-8 z" />
-                    <wpf:Valve HorizontalAlignment="Center"
-                        Component="vH2Flow" HelpText="H2 flow valve">
-                        <wpf:Restriction />
-                    </wpf:Valve>
-                    <wpf:Break HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" RenderTransform="{DynamicResource Down}" IsHitTestVisible="False" />
-                    <wpf:Arrow Orientation="Up" HorizontalAlignment="Center" Margin="0,3,0,0" IsHitTestVisible="False" />
-                    <Canvas Width="21" Height="21">
-                        <TextBlock Canvas.Left="10.5" Padding="0" RenderTransform="{wpf:AnchorTransform TopCenter}" IsHitTestVisible="False">
-                    <Run Text="H" /><Run Typography.Variants="Subscript" Text="2"/>
-                        </TextBlock>
-                    </Canvas>
-                </StackPanel>
-                <StackPanel Canvas.Left="52" Width="21" Background="Transparent"
-                    AutomationProperties.HelpText="Helium gas supply">
-                    <wpf:Valve HorizontalAlignment="Center"
-                        Component="vHe_VM" HelpText="He-VM valve"/>
-                    <Path HorizontalAlignment="Center" Margin="-1" Style="{DynamicResource FittingShapeStyle}" IsHitTestVisible="False"
-                        Data="M0.5,0.5 h8 v8 h-8 z" />
-                    <wpf:Valve HorizontalAlignment="Center"
-                        Component="vHeFlow" HelpText="He flow valve">
-                        <wpf:Restriction />
-                    </wpf:Valve>
-                    <wpf:Break HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" RenderTransform="{DynamicResource Down}" IsHitTestVisible="False" />
-                    <wpf:Arrow Orientation="Up" HorizontalAlignment="Center" Margin="0,3,0,0" IsHitTestVisible="False" />
-                    <Canvas Width="21" Height="21">
-                        <TextBlock Canvas.Left="10.5" Padding="0" RenderTransform="{wpf:AnchorTransform TopCenter}" IsHitTestVisible="False">
-                    <Run Text="He" />
-                        </TextBlock>
-                    </Canvas>
-                </StackPanel>
-                <StackPanel Canvas.Left="78" Width="21" Background="Transparent"
-                    AutomationProperties.HelpText="Oxygen gas supply">
-                    <wpf:Valve HorizontalAlignment="Center"
-                        Component="vO2_VM" HelpText="O2-VM valve"/>
-                    <wpf:Break HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" RenderTransform="{DynamicResource Down}" IsHitTestVisible="False" />
-                    <wpf:Arrow Orientation="Up" HorizontalAlignment="Center" Margin="0,3,0,0" IsHitTestVisible="False" />
-                    <Canvas Width="21" Height="21">
-                        <TextBlock Canvas.Left="10.5" Padding="0" RenderTransform="{wpf:AnchorTransform TopCenter}" IsHitTestVisible="False">
-                        <Run Text="O" /><Run Typography.Variants="Subscript" Text="2" />
-                        </TextBlock>
-                    </Canvas>
-                </StackPanel>
+                <wpf:GasSupply GasName="CO2" HelpText="Carbon dioxide gas supply"
+                    Valve="vCO2_VM" FlowValve="vCO2Flow" d:FlowValve=""/>
+                <wpf:GasSupply GasName="H2" HelpText="Hydrogen gas supply"
+                    Valve="vH2_VM" FlowValve="vH2Flow" d:FlowValve=""
+                    Canvas.Left="26" />
+                <wpf:GasSupply GasName="He" HelpText="Helium gas supply"
+                    Valve="vHe_VM" FlowValve="vHeFlow" d:FlowValve=""
+                    Canvas.Left="52" />
+                <wpf:GasSupply GasName="O2" HelpText="Oxygen gas supply"
+                    Valve="vO2_VM" Canvas.Left="78" />
             </Canvas>
 
             <!--Vacuum system-->

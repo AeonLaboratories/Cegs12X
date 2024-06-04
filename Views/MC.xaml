@@ -35,23 +35,23 @@
 
         <wpf:FTC Canvas.Left="6" Canvas.Top="56" Width="23" Height="23"
                Component="ftcMC" HelpText="Measurement chamber coldfinger" />
-        <wpf:CultureTube Size="9mm" Canvas.Left="15" Canvas.Top="52" IsHitTestVisible="False"/>
+        <wpf:CultureTube Size="9mm" Canvas.Left="14" Canvas.Top="53" IsHitTestVisible="False" />
 
         <wpf:Valve Canvas.Left="-18" Canvas.Top="4" Component="vMC_MCP1" HelpText="MC-MCP1 valve" />
-        <wpf:CO2Chamber Canvas.Left="-54" Canvas.Top="20" RenderTransform="{DynamicResource Left}"
+        <wpf:CO2Chamber Orientation="Right" Canvas.Left="-55" Canvas.Top="7" 
             Component="Chamber.MCP1" HelpText="Aliquot 2 chamber (MCP1)" />
 
         <wpf:Valve Canvas.Left="34" Canvas.Top="4" Component="vMC_MCP2" HelpText="MC-MCP2 valve" />
-        <wpf:CO2Chamber Canvas.Left="89" Canvas.Top="7" RenderTransform="{DynamicResource Right}" 
+        <wpf:CO2Chamber Orientation="Left" Canvas.Left="53" Canvas.Top="7"
             Component="Chamber.MCP2" HelpText="Aliquot 3 chamber (MCP2)" />
+
+
 
         <StackPanel Canvas.Left="3" Canvas.Top="-3" RenderTransform="{wpf:AnchorTransform BottomRight}" Background="Transparent"
             wpf:View.Component="ugCinMC" AutomationProperties.HelpText="micrograms of carbon in the measurement chamber">
             <Label Content="μgC" Padding="1,0.5" HorizontalAlignment="Center" IsHitTestVisible="False" />
-            <Label Padding="3,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                Content="{Binding (wpf:View.Component).Value, FallbackValue=1200.0, RelativeSource={RelativeSource Self}}"
-                ContentStringFormat="0.0" BorderBrush="Black" BorderThickness="0.5"
-                wpf:View.Component="ugCinMC" IsHitTestVisible="False"
+            <wpf:Gauge Style="{DynamicResource StableGauge}"
+                   Component="ugCinMC" />
         </StackPanel>
 
     </Canvas>

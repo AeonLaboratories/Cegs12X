@@ -1,31 +1,28 @@
-﻿<v:ControlPanel x:TypeArguments="cegs:Cegs12X" x:Class="Cegs12X.Views.ControlPanel"
+﻿<wpf:ControlPanel x:TypeArguments="cegs:Cegs12X" x:Class="Cegs12X.Views.ControlPanel"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:cegs="clr-namespace:AeonHacs.Components"
         xmlns:local="clr-namespace:Cegs12X.Views"
-        xmlns:wpf="clr-namespace:AeonHacs.Wpf;assembly=AeonHacs.Wpf"
-        xmlns:v="clr-namespace:AeonHacs.Wpf.Views;assembly=AeonHacs.Wpf"
-        xmlns:b="clr-namespace:AeonHacs.Wpf.Behaviors;assembly=AeonHacs.Wpf"
-        xmlns:c="clr-namespace:AeonHacs.Wpf.Converters;assembly=AeonHacs.Wpf"
+        xmlns:wpf="http://schemas.aeonhacs.com/wpf"
         mc:Ignorable="d" 
         d:DesignWidth="1020"
         d:DesignHeight="550">
 
-    <v:ControlPanel.Resources>
-        <c:TimeSpanToStringConverter x:Key="TimeSpanConverter" />
-        <c:ProcessStateToVisibilityConverter x:Key="ProcessStateConverter" />
-        <c:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-        <c:ToStringConverter x:Key="ToStringConverter" />
-    </v:ControlPanel.Resources>
+    <wpf:ControlPanel.Resources>
+        <wpf:TimeSpanToStringConverter x:Key="TimeSpanConverter" />
+        <wpf:ProcessStateToVisibilityConverter x:Key="ProcessStateConverter" />
+        <wpf:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <wpf:ToStringConverter x:Key="ToStringConverter" />
+    </wpf:ControlPanel.Resources>
 
     <!--==============================================-->
     <!-- The display space -->
     <!--==============================================-->
     <Grid>
         <!-- Simplify references to Cegs properties -->
-        <v:View x:Name="Cegs" Component="Cegs12X" Visibility="Collapsed" />
+        <wpf:View x:Name="Cegs" Component="Cegs12X" Visibility="Collapsed" />
 
         <!-- System Uptime -->
         <StackPanel Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -140,13 +137,13 @@
                 <local:Split Canvas.Left="493" Canvas.Top="237" />
                 <local:GM Canvas.Left="532" Canvas.Top="49" />
 
-                <v:Valve HelpText="IMC-CT valve" Component="vIMC_CT" Canvas.Left="249" Canvas.Top="232" />
-				<v:Valve HelpText="CT-VTT valve" Component="vCT_VTT" Canvas.Left="371" Canvas.Top="232" />
-				<v:Valve HelpText="VTT-MC valve" Component="vVTT_MC" Canvas.Left="423" Canvas.Top="232" />
-				<v:Valve HelpText="MC-Split valve" Component="vMC_Split" Canvas.Left="475" Canvas.Top="232" />
-				<v:Valve HelpText="Split-GMC valve" Component="vSplit_GMC" Canvas.Left="514" Canvas.Top="232" />
+                <wpf:Valve HelpText="IMC-CT valve" Component="vIMC_CT" Canvas.Left="249" Canvas.Top="232" />
+				<wpf:Valve HelpText="CT-VTT valve" Component="vCT_VTT" Canvas.Left="371" Canvas.Top="232" />
+				<wpf:Valve HelpText="VTT-MC valve" Component="vVTT_MC" Canvas.Left="423" Canvas.Top="232" />
+				<wpf:Valve HelpText="MC-Split valve" Component="vMC_Split" Canvas.Left="475" Canvas.Top="232" />
+				<wpf:Valve HelpText="Split-GMC valve" Component="vSplit_GMC" Canvas.Left="514" Canvas.Top="232" />
 
             </Canvas>
         </DockPanel>
     </Grid>
-</v:ControlPanel>
+</wpf:ControlPanel>
