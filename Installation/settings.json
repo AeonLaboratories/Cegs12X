@@ -8389,8 +8389,6 @@
         "Manual"
       ],
       "PortType": "Combustion",
-      "NotifySampleFurnaceNeeded": false,
-      "WarmTemperature": 40,
       "QuartzFurnace": "hIP1CCQ",
       "SampleFurnace": "hIP1CCS",
       "State": "Empty",
@@ -8413,8 +8411,6 @@
         "Manual"
       ],
       "PortType": "Combustion",
-      "NotifySampleFurnaceNeeded": false,
-      "WarmTemperature": 40,
       "QuartzFurnace": "hIP2CCQ",
       "SampleFurnace": "hIP2CCS",
       "State": "Empty",
@@ -8437,8 +8433,6 @@
         "Manual"
       ],
       "PortType": "Combustion",
-      "NotifySampleFurnaceNeeded": false,
-      "WarmTemperature": 40,
       "QuartzFurnace": "hIP3CCQ",
       "SampleFurnace": "hIP3CCS",
       "State": "Empty",
@@ -8461,8 +8455,6 @@
         "Manual"
       ],
       "PortType": "Combustion",
-      "NotifySampleFurnaceNeeded": false,
-      "WarmTemperature": 40,
       "QuartzFurnace": "hIP4CCQ",
       "SampleFurnace": "hIP4CCS",
       "State": "Empty",
@@ -8485,8 +8477,6 @@
         "Manual"
       ],
       "PortType": "Combustion",
-      "NotifySampleFurnaceNeeded": false,
-      "WarmTemperature": 40,
       "QuartzFurnace": "hIP5CCQ",
       "SampleFurnace": "hIP5CCS",
       "State": "Empty",
@@ -8509,8 +8499,6 @@
         "Manual"
       ],
       "PortType": "Combustion",
-      "NotifySampleFurnaceNeeded": false,
-      "WarmTemperature": 40,
       "QuartzFurnace": "hIP6CCQ",
       "SampleFurnace": "hIP6CCS",
       "State": "Empty",
@@ -8675,8 +8663,6 @@
         "GasSupply"
       ],
       "PortType": "GasSupply",
-      "NotifySampleFurnaceNeeded": false,
-      "WarmTemperature": 40,
       "QuartzFurnace": null,
       "SampleFurnace": null,
       "State": "Empty",
@@ -12083,6 +12069,7 @@
     ]
   },
   "AutoFeedEnabled": false,
+  "CollectedSamples": [],
   "Power": "Power",
   "SampleLog": "SampleLog",
   "TestLog": "TestLog",
@@ -12100,6 +12087,5 @@
   "MC_Split": "MC_Split",
   "SampleMeter": "ugCinMC",
   "IpOvenRamper": "IpOvenRamper",
-  "Sample": null,
-  "CollectedSample": null
+  "Sample": null
 }
