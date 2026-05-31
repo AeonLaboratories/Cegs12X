@@ -75,36 +75,25 @@
                            TextTrimming="CharacterEllipsis" />
             </Border>
 
-                    <!-- Process Substep -->
-                    <StackPanel Orientation="Horizontal">
-                        <Label x:Name="ProcessSubstepTime" AutomationProperties.HelpText="Process Substep Time"
-                                Content="{Binding Component.ProcessSubStep.Latest.Elapsed, ElementName=Cegs, 
-								    Converter={StaticResource TimeSpanConverter}, 
-									TargetNullValue=00:00:00, FallbackValue=00:00:00}"
-                                BorderBrush="{x:Static SystemColors.ActiveBorderBrush}" BorderThickness="0.5"
-                                Margin="2,2,3,2" Padding="3,0,3,0" HorizontalContentAlignment="Right" />
-                        <Border AutomationProperties.HelpText="Process Substep"
-                                Background="Transparent"
-                                BorderBrush="{x:Static SystemColors.ActiveBorderBrush}" BorderThickness="0.5"
-                                Width="350" Margin="0,2,3,2" Padding="3,0" >
-                            <TextBlock
-                                DataContext="{Binding Component.ProcessSubStep, ElementName=Cegs}"
-                                Text="{Binding Latest.Description, TargetNullValue=''}"
-                                wpf:View.Component="{Binding .}"
-                                VerticalAlignment="Center"
-                                TextTrimming="CharacterEllipsis" />
-                        </Border>
-                    </StackPanel>
-                </StackPanel>
-
-                <!-- Start button -->
-                <StackPanel>
-                    <Button Content="Start" Click="StartButton_Click" AutomationProperties.HelpText="Start the selected process"
-                            Margin="0,23,3,2" Padding="3,0,3,0" VerticalAlignment="Top" HorizontalAlignment="Right"
-                            Visibility="{Binding Component.NotBusy, ElementName=Cegs, Converter={StaticResource BoolToVisibilityConverter}, FallbackValue=Visible}" />
-                </StackPanel>
-            </StackPanel>
-        </Border>
+            <!-- Process Substep -->
+            <Label x:Name="ProcessSubstepTime" AutomationProperties.HelpText="Process Substep Time"
+                   Content="{Binding Component.ProcessSubStep.Latest.Elapsed, ElementName=Cegs, 
+                       Converter={StaticResource TimeSpanConverter}, 
+                       TargetNullValue=0:00:00, FallbackValue=0:00:00}"
+                   BorderBrush="{x:Static SystemColors.ActiveBorderBrush}" BorderThickness="0.5"
+                   Grid.Row="3" Grid.Column="0" Margin="2" Padding="3,0"
+                   HorizontalContentAlignment="Right" />
+            <Border AutomationProperties.HelpText="Process Substep"
+                    Background="Transparent"
+                    BorderBrush="{x:Static SystemColors.ActiveBorderBrush}" BorderThickness="0.5"
+                    Grid.Row="3" Grid.Column="1" Margin="2" Padding="3,0" >
+                <TextBlock DataContext="{Binding Component.ProcessSubStep, ElementName=Cegs}"
+                           Text="{Binding Latest.Description, TargetNullValue=''}"
+                           wpf:View.Component="{Binding .}"
+                           VerticalAlignment="Center"
+                           TextTrimming="CharacterEllipsis" />
+            </Border>
+        </Grid>
 
         <!-- Sample Info -->
         <StackPanel Orientation="Horizontal" AutomationProperties.HelpText="Active or Prior Sample"
